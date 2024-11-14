@@ -1,0 +1,5 @@
+O exercício será avaliado conforme os seguintes critérios:
+• Uso de ferramenta para repositório e versionamento dos códigos: 2 pontos.
+• Desenvolvimento da entidade: 3 pontos.
+• Desenvolvimento do endpoint: 3 pontos.
+• Teste do endpoint: 2 pontos.
