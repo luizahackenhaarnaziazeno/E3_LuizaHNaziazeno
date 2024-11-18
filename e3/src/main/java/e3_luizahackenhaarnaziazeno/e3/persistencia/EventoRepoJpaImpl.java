@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @Repository
@@ -34,6 +36,16 @@ public class EventoRepoJpaImpl implements IEventoRepository {
         return repository.findById(codigo).orElse(null);
     }
 
+  @Override
+public boolean cadastro(Evento evento) {
+    try {
+        repository.save(evento);  // Tenta salvar o evento no banco de dados
+        return true;
+    } catch (Exception e) {
+        // Em caso de erro, lança uma exceção genérica
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro ao cadastrar evento", e);
+    }
+}
 
 
 }

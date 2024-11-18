@@ -29,11 +29,10 @@ public class ExemploControllerEventos {
         return eventoRepository.getEventos();
     }
     
-/*
-
+  //como ver no postman /acmerescue/validaevento?codigo=1
     @PostMapping("/validaevento")
     public boolean validaevento(long codigo) {
-        for (Evento evento : eventoRepository.getEvento()) {
+        for (Evento evento : eventoRepository.getEventos()) {
             if (evento.getCodigo() == codigo) {
                 return true;
             }
@@ -41,14 +40,9 @@ public class ExemploControllerEventos {
         return false;
     }
 
-    
-    
-
-     @PostMapping("/acmerescue/cadastro/cadevento")
-     public boolean cadevento(@RequestBody final Evento evento) {
-        return this.eventoRepository.cadastro(evento);
-    }*/
-    
-       
+    @PostMapping("/cadastro/cadevento")
+     public boolean cadevento(@RequestBody Evento evento) {
+        return eventoRepository.cadastro(evento);
+    }  
 
 }
