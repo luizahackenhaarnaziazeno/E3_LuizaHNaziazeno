@@ -1,5 +1,3 @@
-
-5 eventos,3 atendimentos para 3 dos eventos
 INSERT INTO evento (codigo, descricao, data, latitude, longitude) VALUES
 (1, 'Terremoto de magnitude 7.8', '2024-11-15 14:30:00', -9.1900, -77.0353);
 

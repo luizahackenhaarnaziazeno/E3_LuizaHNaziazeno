@@ -1,15 +1,19 @@
-package e3_luizahackenhaarnaziazeno.e3;
+package e3_luizahackenhaarnaziazeno.e3.persistencia;
 
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.*;
 
 
+@Entity
     public class Evento {
+    @Id
     private long codigo;
     private String descricao;
     private String data;
     private double latitude;
     private double longitude;
+
+    protected Evento() {
+    }
 
     public Evento(long codigo, String descricao, String data, double latitude, double longitude) {
         this.codigo = codigo;
@@ -42,13 +46,13 @@ import java.util.List;
    
    @Override
     public String toString() {
-        return "{" +
+        return "[" +
                 " codigo='" + getCodigo() + "'" +
                 ", descricao='" + getDescricao() + "'" +
                 ", data='" + getData() + "'" +
                 ", latitude='" + getLatitude() + "'" +
                 ", longitude='" + getLongitude() + "'" +
-                "}";
+                "]";
     }
 
 

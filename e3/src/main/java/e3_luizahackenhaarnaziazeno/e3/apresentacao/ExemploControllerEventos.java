@@ -1,0 +1,54 @@
+
+package e3_luizahackenhaarnaziazeno.e3.apresentacao;
+
+import e3_luizahackenhaarnaziazeno.e3.persistencia.*;
+import java.util.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+
+@RestController
+@RequestMapping("/acmerescue")
+public class ExemploControllerEventos {
+    private IEventoRepository eventoRepository;
+
+    @Autowired
+    public ExemploControllerEventos(IEventoRepository eventoRepository) {
+        this.eventoRepository = eventoRepository;
+    }
+
+    @GetMapping("/evento")
+    public String getMensagemInicial() {
+        return "Iniciando eventos acmerescue!";
+    }
+
+    
+    @GetMapping("/cadastro/listaeventos")
+    public List<Evento> getEventos() {
+        return eventoRepository.getEventos();
+    }
+    
+/*
+
+    @PostMapping("/validaevento")
+    public boolean validaevento(long codigo) {
+        for (Evento evento : eventoRepository.getEvento()) {
+            if (evento.getCodigo() == codigo) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
+    
+
+     @PostMapping("/acmerescue/cadastro/cadevento")
+     public boolean cadevento(@RequestBody final Evento evento) {
+        return this.eventoRepository.cadastro(evento);
+    }*/
+    
+       
+
+}
