@@ -22,13 +22,18 @@ public class ExemploControllerEventos {
 
     @GetMapping("/")
     public String getMensagemInicial() {
-        return "Iniciando eventos acmerecue!";
+        return "Iniciando eventos acmerescue!";
     }
 
     //nao ta ok todos os metodos abaixo
     @GetMapping("/evento")
-    public List<Evento> getEvento() {
-        return eventoRepository.getEvento();
+    public ResponseEntity<List<Evento>> getEvento() {
+        try {
+            List<Evento> eventos = eventoRepository.getEvento();
+            return new ResponseEntity<>(eventos, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PostMapping("/cadastro")

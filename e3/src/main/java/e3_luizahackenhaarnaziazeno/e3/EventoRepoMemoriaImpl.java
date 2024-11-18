@@ -19,6 +19,11 @@ public class EventoRepoMemoriaImpl implements IEventoRepository {
     }
 
     @Override
+    public List<Evento> findAll() {
+        return eventos;
+    }
+
+    @Override
     public List<Evento>getEvento(){  
         return eventos; 
     }

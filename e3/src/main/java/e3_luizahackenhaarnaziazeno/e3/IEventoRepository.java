@@ -9,5 +9,7 @@ public interface IEventoRepository {
     boolean validaevento(long codigo);
     List<Evento> getListaEvento();
     boolean cadevento(Evento evento);
+    List<Evento> findAll();
+
 }
 

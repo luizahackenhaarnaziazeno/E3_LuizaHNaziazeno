@@ -21,6 +21,11 @@ public class EventoRepoJdbcImpl implements IEventoRepository {
     }
 
     @Override
+    public List<Evento> findAll() {
+        return getEvento();
+    }
+
+    @Override
     public List<Evento> getEvento() {
         List<Evento> resp = this.jdbcTemplate.query("SELECT * FROM evento",
                 (rs, rowNum) -> new Evento(rs.getLong("codigo"),
