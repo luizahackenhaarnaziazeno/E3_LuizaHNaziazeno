@@ -1,7 +1,7 @@
 
-package e3_luizahackenhaarnaziazeno.e3.apresentacao;
+package br.e3_luizahackenhaarnaziazeno.e3.apresentacao;
 
-import e3_luizahackenhaarnaziazeno.e3.persistencia.*;
+import br.e3_luizahackenhaarnaziazeno.e3.persistencia.*;
 import java.util.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

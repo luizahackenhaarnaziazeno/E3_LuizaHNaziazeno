@@ -1,4 +1,4 @@
-package e3_luizahackenhaarnaziazeno.e3.persistencia;
+package br.e3_luizahackenhaarnaziazeno.e3.persistencia;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class EventoRepoJpaImpl implements IEventoRepository {
         return repository.findById(codigo).orElse(null);
     }
 
+    
   
             
 
