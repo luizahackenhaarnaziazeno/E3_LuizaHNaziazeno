@@ -43,6 +43,23 @@ import jakarta.persistence.*;
         return this.longitude;
     }
 
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public void setData(String data) {
+        this.data = data;
+    }
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+
    
    @Override
     public String toString() {

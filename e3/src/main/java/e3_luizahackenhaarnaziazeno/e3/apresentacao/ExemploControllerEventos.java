@@ -4,7 +4,9 @@ package e3_luizahackenhaarnaziazeno.e3.apresentacao;
 import e3_luizahackenhaarnaziazeno.e3.persistencia.*;
 import java.util.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 
 
 
@@ -41,8 +43,12 @@ public class ExemploControllerEventos {
     }
 
     @PostMapping("/cadastro/cadevento")
-     public boolean cadevento(@RequestBody Evento evento) {
-        return eventoRepository.cadastro(evento);
-    }  
+    public boolean cadevento(@RequestBody Evento evento) {
+        if (eventoRepository.getCodigo(evento.getCodigo()) != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Evento já cadastrado");
+        }
+        eventoRepository.getEventos().add(evento);
+        return true;
+    }
 
 }

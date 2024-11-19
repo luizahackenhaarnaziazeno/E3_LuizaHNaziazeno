@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
 
-
 @Repository
 @Primary
 public class EventoRepoJpaImpl implements IEventoRepository {
@@ -17,7 +16,7 @@ public class EventoRepoJpaImpl implements IEventoRepository {
     @Autowired
     public void EventoRepoJpaIpl(IEventoJpaItfRep repository) {
         this.repository = repository;
-       
+
     }
 
     @Override
@@ -27,7 +26,7 @@ public class EventoRepoJpaImpl implements IEventoRepository {
             return new LinkedList<Evento>();
         } else {
             return eventos.stream()
-                         .toList();
+                    .toList();
         }
     }
 
@@ -36,16 +35,7 @@ public class EventoRepoJpaImpl implements IEventoRepository {
         return repository.findById(codigo).orElse(null);
     }
 
-  @Override
-public boolean cadastro(Evento evento) {
-    try {
-        repository.save(evento);  // Tenta salvar o evento no banco de dados
-        return true;
-    } catch (Exception e) {
-        // Em caso de erro, lança uma exceção genérica
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro ao cadastrar evento", e);
-    }
-}
-
+  
+            
 
 }
