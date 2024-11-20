@@ -42,13 +42,6 @@ public class ExemploControllerEventos {
         return false;
     }
 
-    @PostMapping("/cadastro/cadevento")
-    public boolean cadevento(@RequestBody Evento evento) {
-        if (eventoRepository.getCodigo(evento.getCodigo()) != null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Evento já cadastrado");
-        }
-        eventoRepository.getEventos().add(evento);
-        return true;
-    }
+    
 
 }
